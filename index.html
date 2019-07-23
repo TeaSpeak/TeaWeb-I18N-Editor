@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="../../favicon.ico">
+
+        <title>Starter Template for Bootstrap</title>
+        <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/starter-template/">
+
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/i18n-helper.css" rel="stylesheet">
+    </head>
+
+    <body class="bg-dark d-flex flex-column vh-100">
+        <header>
+            <nav class="navbar navbar-expand navbar-dark fixed-top bg-dark">
+                <a class="navbar-brand" href="#">
+                    <img src="https://teaspeak.de/img/teaspeak_cup_animated.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                    TeaSpeak I18N Helper
+                </a>
+                <ul class="navbar-nav mr-auto"></ul>
+                <form class="form-inline mt-2 mt-md-0">
+                    <span class="container-file-loaded" style="display: none">
+                        <span class="label-current-file navbar-text" style="padding-right: 2em">i18n_test.txt</span>
+                        <button class="button-save-file btn btn-outline-success my-2 my-sm-0">Save file</button>
+                        <button class="button-load-file btn btn-outline-secondary my-2 my-sm-0" style="margin-left: 1em">Load file</button>
+                    </span>
+                    <span class="container-file-load">
+                        <button class="button-load-file btn btn-outline-success my-2 my-sm-0" style="margin-left: 1em">Load file</button>
+                        <input type="file" name="file" accept=".translation" style="display: none" id="input-file-select">
+                    </span>
+                </form>
+            </nav>
+        </header>
+
+        <main role="main" class="d-flex flex-column align-content-stretch vh-100">
+            <div class="container-fluid d-flex flex-column flex-shrink-1 flex-grow-1">
+                <div class="d-flex flex-row align-content-stretch flex-shrink-1 flex-grow-1">
+                    <div class="my-4 col-4 p-2 d-flex flex-column align-content-stretch flex-shrink-1 flex-grow-1 flex-grow-1">
+                        <h2 class="flex-grow-0 flex-shrink-0 text-light">Translatable Messages</h2>
+                        <div class="my-2 form-row flex-grow-0 flex-shrink-0">
+                            <div class="col-search-text col-auto flex-grow-1 flex-shrink-0">
+                                <input class="form-control input-ot-filter" type="text" placeholder="Search..">
+                            </div>
+                            <div class="col-auto flex-shrink-0 flex-grow-0">
+                                <button class="button-ot-filter-advanced btn btn-outline-secondary">Advanced settings</button>
+                            </div>
+                        </div>
+                        <div class="container-advanced-filter my-2 form-group flex-shrink-0 flex-grow-0">
+                            <div class="custom-control custom-checkbox container-ot-filter-flags-approved">
+                                <input type="checkbox" class="input-ot-filter-flags-approved custom-control-input">
+                                <label class="custom-control-label text-light" style="cursor: pointer" >Only approved translations</label>
+                            </div>
+
+                            <div class="input-group my-1">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Flags (whitelist)</span>
+                                </div>
+                                <input class="form-control input-ot-filter-flags" type="text" placeholder="Flags">
+                            </div>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Flags (blacklist)</span>
+                                </div>
+                                <input class="form-control input-ot-filter-flags-negate" type="text" placeholder="Flags">
+                            </div>
+                            <small class="text-light">Separate flags with ,</small>
+                        </div>
+                        <ul class="container-translations list-group list-group-item-dark flex-grow-1 flex-shrink-1 overflow-auto"></ul>
+                        <a class="flex-grow-0 flex-shrink-0 text-light">Showing <span class="ct-shown-entries"></span> entries of <span class="ct-all-entries"></span> entries</a>
+                    </div>
+                    <div class="my-4 col-8 flex-shrink-0">
+                        <div class="mx-0 form-group row d-flex flex-row align-content-stretch">
+                            <h2 class="text-light flex-grow-1 flex-shrink-0">Translate Message</h2>
+                            <button type="button" class="button-tr-approve btn btn-outline-success flex-grow-0 flex-shrink-0">Approve Translation</button>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label text-light">Original Text</label>
+                            <div class="col-sm-10">
+                                <textarea class="ta-tr-original form-control form-control-plaintext overflow-auto" readonly type="text"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label text-light">Translated Text</label>
+                            <div class="col-sm-10">
+                                <textarea class="ta-tr-translated form-control overflow-auto" type="text"></textarea>
+                            </div>
+                        </div>
+
+
+                        <h3 class="text-light flex-grow-0 flex-shrink-0">Translation Flags</h3>
+                        <ul class="container-list-flags list-group list-group-item-darkover flow-auto">
+                        </ul>
+
+                        <div class="my-2 form-row flex-grow-0 flex-shrink-0">
+                            <div class="col-search-text col-auto flex-grow-1 flex-shrink-0">
+                                <input class="form-control input-t-flag-new" type="text" placeholder="New flag..">
+                            </div>
+                            <div class="col-auto flex-shrink-0 flex-grow-0">
+                                <button class="button-t-flag-new btn btn-secondary">Add Flag</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/i18n-helper.js"></script>
+
+        <script>
+            //$(".container-file-load").hide();
+            //$(".container-file-loaded").show();
+        </script>
+    </body>
+</html>
