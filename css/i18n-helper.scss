@@ -1,0 +1,7 @@
+main > .container-fluid {
+	padding: 60px 15px 0;
+}
+
+.list-group-item[x-approved]:not(.active) {
+	background: rgba(57, 255, 20, .4);
+}
