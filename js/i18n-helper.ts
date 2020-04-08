@@ -76,6 +76,7 @@ const apply_filter = () => {
         const entry = $(e);
         const translation = current_data.translations[parseInt(entry.attr('tr-index'))];
 
+        let approved = translation.flags.findIndex(e => e === FLAG_VERIFIED) !== -1;
         let visiable = true;
         if(filter_text && visiable)
             visiable = translation.key.message.toLowerCase().indexOf(filter_text) != -1 || (translation.translated || "").toLowerCase().indexOf(filter_text) != -1;
@@ -85,6 +86,7 @@ const apply_filter = () => {
         if(filter_flags.length > 0 && visiable) {
             visiable = filter_flags.findIndex(e => (translation.flags || []).indexOf(e) == -1) == -1;
         }
+        entry.attr("x-approved", approved ? "" : null);
         entry.toggle(visiable);
         if(visiable)
             count++;
@@ -108,13 +110,17 @@ const _add_flag = (flag) => {
                     const index = current_translation.flags.indexOf(flag);
                     if(index >= 0)
                         current_translation.flags.splice(index, 1);
-                    if(flag === FLAG_VERIFIED)
+                    if(flag === FLAG_VERIFIED) {
                         set_current_translation(current_translation); /* update buttons etc */
+                        apply_filter();
+                    }
                 })
             )
         )
     );
     li.appendTo(contianer_list_flags);
+    if(flag === FLAG_VERIFIED)
+        apply_filter();
 };
 
 $(".input-t-flag-new").on('change keyup', event => {

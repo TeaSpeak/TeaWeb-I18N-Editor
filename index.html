@@ -37,8 +37,8 @@
         </header>
 
         <main role="main" class="d-flex flex-column align-content-stretch vh-100">
-            <div class="container-fluid d-flex flex-column flex-shrink-1 flex-grow-1">
-                <div class="d-flex flex-row align-content-stretch flex-shrink-1 flex-grow-1">
+            <div class="container-fluid d-flex flex-column flex-shrink-1 flex-grow-1" style="min-height: 20em;">
+                <div class="d-flex flex-row align-content-stretch flex-shrink-1 flex-grow-1"  style="min-height: 20em;">
                     <div class="my-4 col-4 p-2 d-flex flex-column align-content-stretch flex-shrink-1 flex-grow-1 flex-grow-1">
                         <h2 class="flex-grow-0 flex-shrink-0 text-light">Translatable Messages</h2>
                         <div class="my-2 form-row flex-grow-0 flex-shrink-0">
@@ -122,5 +122,15 @@
             //$(".container-file-load").hide();
             //$(".container-file-loaded").show();
         </script>
+
+    <!--
+    Changelog:
+    1.0.0: Release until 07/04/20:
+    - Initial release
+    1.0.1: Released 07/04/20
+    - Fixed message list box (now scrolling instead of stretching the page)
+    - Updating the message box when adding the approved flag
+    - Outlining the approved translations
+    -->
     </body>
 </html>
