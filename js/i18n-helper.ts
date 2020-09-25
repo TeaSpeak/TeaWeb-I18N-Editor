@@ -195,9 +195,9 @@ $("#input-file-select").on('change', event => {
 
         let data;
         try {
+            console.log(reader.result);
             data = JSON.parse(reader.result as string);
-        }
-        catch (error) {
+        } catch (error) {
             console.error("Failed to parse json data: %o", error);
             show_error("Failed to parse file. Please lookup the console for more details.");
             return;
